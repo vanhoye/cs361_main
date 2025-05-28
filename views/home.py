@@ -1,6 +1,6 @@
 import pyfiglet
 from rich.console import Console
-from views import add_ride, ride_log, help
+from views import add_ride, ride_log, help, stats, weather, export_rides
 
 
 def show_home():
@@ -25,6 +25,9 @@ def show_home():
     print('[1]: ➕  Add a Ride')
     print('[2]: 🗒️  View Ride Log')
     print('[3]: ❓  Help')
+    print('[4]: 📊  View Liftime Stats')
+    print('[5]: ⛈️  View Weather')
+    print('[6]: 💾  Export Rides to CSV')
     print('[9]: 🚪  Exit')
     print()
 
@@ -41,6 +44,12 @@ def user_choice_handler():
         ride_log.show_ride_log()
     elif selection == '3':
         help.show_help()
+    elif selection == '4':
+        stats.show_stats()
+    elif selection == '5':
+        weather.show_weather()
+    elif selection == '6':
+        export_rides.show_export_rides()
     elif selection == '9':
         print('\n👋 Thank you for using CycleTracker. See you next ride!')
         print()
